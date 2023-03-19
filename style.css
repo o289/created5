@@ -1,0 +1,477 @@
+@charset "UTF-8";
+
+/* 今回はデスクトップファースト */
+
+/* 初期設定 */
+html{
+    line-height: 1.9;
+}
+body{
+    font-family: 'Noto Sans JP', sans-serif;
+    width: 100%;
+    overflow-x: hidden;
+}
+h2{
+    font-size: clamp(20px, 65%, 50px);
+    font-weight: 900;
+}
+h4{
+    font-size: clamp(18px, 55%, 35px);
+    font-weight: 700;
+}
+ul{
+    list-style: none;
+}
+img{
+    display: block;
+}
+a,
+li,
+tr,
+td,
+p{
+    color: #000;
+    font-size: clamp(16px, 1rem + 2vw, 24px);
+}
+a{
+    display: block;
+    text-decoration: none;
+}
+label{
+    display: block;
+    font-size: 1.125rem;
+}
+input[type="text"],
+input[type="email"],
+textarea{
+    background-color: rgba(255, 255, 255, 0.5);
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+}
+input[type="text"],
+input[type="email"]{
+    width: 100%;
+    max-width: 240px;
+}
+textarea{
+    width: 100%;
+    max-width: 480px;
+    height: 6rem;
+}
+table{
+    table-layout: fixed;
+}
+
+
+
+
+
+
+
+/* クラス・ID設定 */
+
+/* 
+index-html
+*/
+
+.top{
+    background-image: url(./img/生徒.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 45vh; 
+    display: flex;
+}
+.logo-and-name{
+    display: flex;
+    margin: 0 30px;
+}
+.logo-and-name img{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+.logo-and-name h4{
+    font-size: 19px;
+    margin: 10px 0 0 30px ;
+}
+.nav-img{
+    background-color: rgba(192, 192, 192, 0.5);
+    width: 80%;
+    height: 20%;
+    margin: 0 auto;
+}
+/* #hamburger{}
+.navigation{} */
+.nav-list-items{
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+}
+/* .item{}
+.link{} */
+
+
+/* center */
+.center{
+    margin: 100px 0;
+}
+.center h1{
+    text-align: center;
+}
+/* introduction */
+.articles{
+    display: grid;
+    text-align: center;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin: 100px 0;
+}
+.articles article img{
+    margin: 13px auto;
+}
+.articles p{
+    width: 409px;
+    margin: 13px auto;
+}
+/* article */
+.need-article{
+    display: flex;
+    justify-content: center;
+    margin: 10px auto;
+}
+.container{
+    max-width: 100%;
+}
+/* .container img{} */
+.phone{
+    display: none;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 800;
+}
+.text{
+    display: block;
+    margin-left: 50px;
+}
+.copy-phone{
+    display: block;
+    text-align: center;
+    font-weight: 800;
+    font-size: 30px;
+}
+.text p{
+    text-align: center; 
+    width: 400px;
+}
+/* table */
+.table{
+    display: none;
+    text-align: center;
+    margin: 100px 0;
+}
+.table h2{
+    font-size: 40px;
+}
+.price{
+    table-layout: fixed;
+    width: 70%;
+    margin: 30px auto;
+}
+.price thead tr th,
+.price tbody tr td ul li{
+    font-size: 1rem;
+}
+.price tbody tr td{
+    padding: 10px 30px;
+}
+.price th,
+.price td{
+    border: 1px solid #000;
+} 
+.price th{
+    color: #ddd;
+    background-color: rgb(193, 0, 0);
+}
+.price tbody tr td:nth-child(1){
+    background-color: rgb(255, 93, 93);
+}
+.price ul{
+    padding: 0;
+}
+.long-data{
+    width: 100%;
+    font-size:  clamp(10px, 15px, 20px);;
+}
+/* btu */
+.btu{
+    display: block;
+    text-align: center;
+    background-color: rgb(255, 93, 93);
+    border: 2px rgb(193, 0, 0) dashed;
+    border-radius: 5px;
+    margin: 5% auto;
+    width: 35%;
+}
+.btu:hover{
+    color: #fff;
+    background-color: rgb(193, 0, 0);
+}
+/* ハンバーガーメニュー */
+@media (max-width: 883px) {
+    #hamburger{
+        background-image: url(./img/bars_24.svg);
+        background-color: #ddd;
+        background-size: 49px;
+        background-position: center;
+        background-repeat: no-repeat;
+        cursor: pointer;
+        position: relative;
+        z-index: 2;
+        margin-right: 30px;
+        width: 40px;
+        height: 40px;
+    }
+    #hamburger:hover{
+        background-color: #ddd;
+    }
+    #hamburger.on{
+        background-image: url(./img/cross_24.svg);
+        position: fixed;
+        margin-left: 85.2%;
+    }
+    .nav-img{
+        background-color: transparent;
+        width: 1px;
+    }
+    .navigation{
+        background-color:rgba(255, 255, 255, 0.8);
+        display: none;
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        width: 100vw;
+        height: 100vh;
+    }
+    .navigation.on{
+        display: flex;
+    }
+    .nav-list-items{
+        position: absolute;
+        display: block;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .item{
+        margin: 10px 20px;
+    }
+    .link{
+        width: 300px;
+        color: #000;
+        text-align: center;
+        display: block;
+        border-radius: 5px;
+        padding: 25px;
+    }
+    .link:hover{}
+}
+/* スライダー */
+.slick-perv,
+.slick-next{
+    background-color: red;
+    z-index: 1;
+}
+.slick-perv{
+    z-index: 2;
+    left: 50px;
+}
+.slick-next{
+    right: 10px;
+}
+
+/* bottom */
+
+/* form */
+.bottom{
+    text-align: center;
+}
+#hidden-from{
+    display: none;
+    background-color: rgb(255, 131, 131);
+    background-size: cover;
+    margin: 10% auto ;
+    padding: 30px;
+    width: 100%;
+    max-width: 1000px;
+}
+#hidden-from.get{
+    display: block;
+}
+#button{
+    display: block;
+    text-align: center;
+    background-color: rgb(255, 93, 93);
+    border: 2px rgb(193, 0, 0) dashed;
+    border-radius: 5px;
+    margin: auto;
+    padding: 10px 5px;
+    width: 37%;
+    max-width: 250px;
+}
+#button:hover{
+    color: #fff;
+    background-color: rgb(193, 0, 0);
+}
+.most-bottom{
+    height: 15vh;
+    background-color: rgb(140, 0, 0);
+}
+
+
+/* 
+price-list-html 
+*/
+
+/* タブレットの時は表を出す */
+.price-info{
+    text-align: center;
+}
+.price-info table{
+    width: 90%;
+    margin: 30px auto;
+    border: 1px solid #000;
+}
+.price-info table th,
+.price-info table td{
+    border: 1px solid #000;
+}
+.price-info table tr th{
+    color: #fff;
+    background-color: rgb(193, 0, 0);
+}
+/* スマホサイズの時は表出さない */
+.price-info2{
+    display: none;
+}
+.price-table{
+    text-align: center;
+    border: 5px ridge rgb(193, 0, 0);
+    margin: 100px 0;
+}
+.price-table h4{
+    width: 50%;
+    margin: 10px auto;
+    border-bottom: 2px solid rgb(193, 0, 0);
+}
+
+
+/*
+FAQ.html
+*/
+.accordion{
+    box-sizing: border-box;
+    width: 85%;
+    max-width: 800px;
+    margin: 50px auto;
+}
+.open_accordion{
+    border-bottom: 2px solid #fff;
+    background-color: rgb(193, 0, 0);
+    color: #fff;
+    text-align: center;
+    cursor: pointer;
+    transition: .3s;
+    height: 70px;    
+    font-size: clamp(8px, 8px + 2vw, 30px);
+}
+.hidden_accordion{
+    background-color: #ddd;
+    padding: 2rem 1rem;
+    margin-left: 0;
+}
+
+/* introduction */
+@media (max-width: 1120px) {
+    .articles{
+        display: block;
+    }
+}
+
+/* article */
+@media (max-width: 1278px) {
+    .need-article{
+        display: block;
+    }
+    .phone{
+        display: block;
+    }
+    .need-article img{
+        margin: 13px auto;
+    }
+    .copy-phone{
+        display: none;
+    }
+    .need-article .text p{
+        margin: 0 auto;
+    }
+}
+
+
+/* レスポンシブ */
+
+/* PC対応 */
+@media (min-width: 1024px) {
+    .table{
+        display: block;
+    }
+    .btu{
+        display: none;
+    }
+}
+/* ダブレット対応 */
+@media (768px <= width <= 1024px) {
+    .price{
+        width: 85%;
+    }
+}
+/* スマホ対応 */
+@media (max-width: 768px) {
+    /* コース紹介 */
+    .article article img{
+        width: 100vw;
+    }
+    /* 記事 */
+    .need-article img{
+        margin: 0 auto;
+        width: 100vw;
+    }
+    /* 表 */
+    .price{
+        display: block;
+        margin: 0;
+        width: 100%;
+        height: 400px;
+    }
+    .price tbody tr td{
+        padding: 0;
+    }
+    .price td ul li{
+        font-size: 7px;
+    }
+    .price tbody tr:nth-of-type(1) td ul li{
+        line-height: 2.3;
+    }
+    /* 
+    price-list-html
+    */
+    .price-info{
+        display: none;
+    }
+    .price-info2{
+        display: block;
+    }
+}
